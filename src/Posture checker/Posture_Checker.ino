@@ -97,7 +97,6 @@ long checkDistance() {
 /* Function to turn the LED & buzzer ON or OFF */
 // The 'alert' variable will be true to turn on, false to turn off
 void triggerAlert(bool alert) {
-  // NOTE: This assumes LOW turns things ON. If your LED/buzzer turn ON with HIGH, swap these.
   if (alert) {
     // Turn things ON
     digitalWrite(ledPin, LOW);    // Set LED pin to LOW

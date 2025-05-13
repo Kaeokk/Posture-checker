@@ -102,7 +102,7 @@ void triggerAlert(bool alert) {
     digitalWrite(ledPin, LOW);    // Set LED pin to LOW
     digitalWrite(buzzerPin, LOW); // Set buzzer pin to LOW
   } else {
-    // Turn things OFF
+
     digitalWrite(ledPin, HIGH);   // Set LED pin to HIGH
     digitalWrite(buzzerPin, HIGH); // Set buzzer pin to HIGH
   }
@@ -118,10 +118,12 @@ void handleButton(bool badPosture) {
   // It needs to be LOW now, but HIGH last time we checked
   // Also, only silence the alarm if the posture is actually bad right now
   if (currentButtonState == LOW && prevButtonState == HIGH && badPosture) {
-    alertSilenced = true; // Set the flag to silence the alarm
-    Serial.println("Button pressed - Alarm off for now!"); // Print a message
+    alertSilenced = true; // Set the button to silence the alarm
+    Serial.println("Alert silenced by button."); // Print a message
   }
 
+
+  
   // Remember the button's current state for the next time through the loop
   prevButtonState = currentButtonState;
 }
